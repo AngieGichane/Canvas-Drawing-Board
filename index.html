@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Canvas Drawing Board</h1>
+        <p class="subtitle">Create, Save, and Share Your Artwork</p>
+    </header>
+
+    <main>
+        <section id="user-section">
+            <div class="user-container">
+                <input type="text" id="username" placeholder="Enter your name" maxlength="20">
+            </div>
+        </section>
+
+        <section id="canvas-section">
+            <div class="canvas-container">
+                <canvas id="drawing-board"></canvas>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="brush-color">Color:</label>
+                    <input type="color" id="brush-color" value="#000000">
+                </div>
+                
+                <div class="control-group">
+                    <label for="brush-size">Size:</label>
+                    <input type="range" id="brush-size" min="1" max="50" value="5">
+                    <span id="size-display">5px</span>
+                </div>
+                
+                <div class="buttons">
+                    <button id="clear-btn" class="btn secondary-btn">Clear Canvas</button>
+                    <button id="save-btn" class="btn primary-btn">Save Drawing</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery-section">
+            <h2>Drawing Gallery</h2>
+            <div id="gallery" class="gallery-container">
+                <!-- Drawings will be loaded here from Firebase -->
+                <p id="loading-text">Loading gallery...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Canvas Drawing Board | Add this to your portfolio</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    
+    <!-- Our JavaScript -->
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
